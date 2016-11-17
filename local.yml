@@ -1,7 +1,7 @@
 ---
 - name: Deploy Apache to webservers group
+- hosts: all
   vars:
-    hosts: all
     http_port: 80
   remote_user: root
       # Directory to where repository will be cloned
