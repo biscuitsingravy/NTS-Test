@@ -12,13 +12,13 @@
   #- name: write the apache config file
   #  template: src=/etc/ansible/httpd.conf.j2 dest=/etc/httpd/conf/httpd.conf
     notify:
-    - restart apache
+    - restart httpd
   - name: write the index.html for the website
     template: src=https://github.com/biscuitsingravy/NTS-Test/deploy-apache/index.html dest=/var/www/html/index.html
     notify:
-    - restart apache
-  - name: ensure apache is running (and enable it at boot)
-    service: name=httpd state=started enabled=yes�
-  handlers:
-    - name: restart apache
+    - restart httpd
+#  - name: ensure apache is running (and enable it at boot)
+#   service: name=httpd state=started enabled=yes
+#  handlers:
+#    - name: restart apache
 #service: name=httpd state=restarted
