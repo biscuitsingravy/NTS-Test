@@ -1,13 +1,13 @@
 ---
-- name: deploy httpd to EC2 Install
-- hosts: webservers
-  remote_user: root
-#  sudo: yes
+- hosts: all
   tasks:
   - name: install httpd
     yum: pkg=httpd state=latest
+    
+  - name: enable httpd
     notify: 
     - service httpd start
+    
   - name: write the index.html for the website
     template: src=https://github.com/biscuitsingravy/NTS-Test/deploy-apache/index.html dest=/var/www/html/index.html
     notify:
