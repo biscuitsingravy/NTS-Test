@@ -1,24 +1,12 @@
 ---
-- name: Deploy Apache to webservers group
+- name: deploy httpd to EC2 Install
 - hosts: all
-  vars:
-    http_port: 80
-  remote_user: root
-      # Directory to where repository will be cloned
-      # workdir: /var/lib/ansible/local
+  sudo: yes
   tasks:
-  - name: ensure apache is at the latest version
+  - name: install httpd
     yum: pkg=httpd state=latest
-  #- name: write the apache config file
-  #  template: src=/etc/ansible/httpd.conf.j2 dest=/etc/httpd/conf/httpd.conf
-    notify:
-    - restart httpd
+    - service httpd start
   - name: write the index.html for the website
     template: src=https://github.com/biscuitsingravy/NTS-Test/deploy-apache/index.html dest=/var/www/html/index.html
     notify:
-    - restart httpd
-#  - name: ensure apache is running (and enable it at boot)
-#   service: name=httpd state=started enabled=yes
-#  handlers:
-#    - name: restart apache
-#service: name=httpd state=restarted
+    - service httpd restart
