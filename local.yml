@@ -3,7 +3,7 @@
   vars:
     #hosts: all
     http_port: 80
-  remote_user: ec2-user
+  remote_user: root
       # Directory to where repository will be cloned
       workdir: /var/lib/ansible/local
   tasks:
