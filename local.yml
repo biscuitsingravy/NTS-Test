@@ -1,7 +1,7 @@
 ---
 - name: deploy httpd to EC2 Install
-#- hosts: all
-  sudo: yes
+- hosts: all
+#  sudo: yes
   tasks:
   - name: install httpd
     yum: pkg=httpd state=latest
