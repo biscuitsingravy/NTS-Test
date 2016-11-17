@@ -1,6 +1,6 @@
 ---
 - name: deploy httpd to EC2 Install
-- hosts: all
+- hosts: webservers
   remote_user: root
 #  sudo: yes
   tasks:
