@@ -5,10 +5,8 @@
   tasks:
   - name: install httpd
     yum: pkg=httpd state=latest
-    
-  - name: start httpd
-    notify: httpd start
-    
+    notify: 
+    - service httpd start
   - name: write the index.html for the website
     template: src=https://github.com/biscuitsingravy/NTS-Test/deploy-apache/index.html dest=/var/www/html/index.html
     notify:
