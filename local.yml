@@ -5,7 +5,7 @@
     http_port: 80
   remote_user: root
       # Directory to where repository will be cloned
-      workdir: /var/lib/ansible/local
+      # workdir: /var/lib/ansible/local
   tasks:
   - name: ensure apache is at the latest version
     yum: pkg=httpd state=latest
