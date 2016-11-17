@@ -21,4 +21,4 @@
     service: name=httpd state=started enabled=yes�
   handlers:
     - name: restart apache
-service: name=httpd state=restarted
+#service: name=httpd state=restarted
