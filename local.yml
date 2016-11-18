@@ -1,6 +1,5 @@
 ---
-#- hosts: all
-- hosts: pull_mode_hosts
+- hosts: all
   tasks:
   - name: install httpd
     yum: pkg=httpd state=latest
