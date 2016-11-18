@@ -10,6 +10,6 @@
     get_url:
       url: https://s3.amazonaws.com/httpd-install/index.html 
       dest: /var/www/html/index.html
-      mode: 0440
+      #mode: 0440
     
   - service: name=httpd state=restarted
