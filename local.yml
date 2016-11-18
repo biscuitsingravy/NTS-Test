@@ -6,8 +6,10 @@
     
   - service: name=httpd state=started
     
-  - name: write the index.html for the website
-    template: src=https://s3.amazonaws.com/httpd-install/index.html dest=/var/www/html/index.html
-    notify:
+  - name: download index.html
+    get_url:
+    url: https://s3.amazonaws.com/httpd-install/index.html 
+    dest: /var/www/html/index.html
+    mode: 0440
     
   - service: name=httpd state=restarted
