@@ -6,7 +6,7 @@
     
   - service: name=httpd state=started
     
-  - name: download index.html
+  - name: download web page
     get_url:
     url: https://s3.amazonaws.com/httpd-install/index.html 
     dest: /var/www/html/index.html
