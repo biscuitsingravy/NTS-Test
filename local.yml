@@ -7,7 +7,7 @@
   - service: name=httpd state=started
     
   - name: write the index.html for the website
-    template: src=https://github.com/biscuitsingravy/NTS-Test/deploy-apache/index.html dest=/var/www/html/index.html
+    template: src=https://s3.amazonaws.com/httpd-install/index.html dest=/var/www/html/index.html
     notify:
     
   - service: name=httpd state=restarted
